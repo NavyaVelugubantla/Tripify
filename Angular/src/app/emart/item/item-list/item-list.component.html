@@ -1,0 +1,41 @@
+
+<div class="content" role="main">
+
+    <h3> If you book your flight and hotel together, you can save 20%! </h3>
+    
+    <div class="head-container">
+
+    <p>Flight no</p>
+    <button (click)="sortByName(allFlights)">Flight Name</button>
+    <p>source city</p>
+    <p>source time</p>
+
+    <!-- <img src="" > -->
+    <p>dest city</p>
+    <p>dest time</p>
+    <p>duration</p>
+    
+    <button style="margin: 15px 20px" (click)="sortByPrice(allFlights)">price</button>
+
+    </div>
+
+    <div *ngFor="let item of allFlights">
+        <div class="card-container" >
+            <p> {{ item.flightNumber }}</p>
+            <p> {{ item.flightName }}</p>
+            <p> {{ item.source }} </p>
+            <p> {{ item.departureTime }} </p>
+            <p> {{ item.destination }} </p>
+            <p> {{ item.arrivalTime }}</p>
+            <p> {{ item.duration }} </p>
+            <p> ${{item.cost }}</p>
+            <!-- <button style="margin-left: 500px" type="button" (click)="displayItemDetails(item.id)" class="button">
+                Book flight + hotel
+            </button>   -->
+            <button type="button" (click)="addToCart(item)" [disabled]="btnstate" class="button flightButton">
+                Book Flight
+            </button>
+            
+        </div>     
+    </div>
+</div>

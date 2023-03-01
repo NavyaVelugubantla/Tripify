@@ -1,0 +1,31 @@
+<!-- <p class="note">Please login to book a hotel!</p>  -->
+
+<div class="content" role="main">
+    
+    <div class="head-container">
+
+        <button style="width: 200px;" (click)="sortByName(allHotels)">Hotel Name</button>
+        <button>City</button>
+        <button (click)="sortByRating(allHotels)">Star rating </button>
+        <p style="width: 150px; padding-left: 50px;">Address</p>
+        <p style="padding-left: 60px;">Phone Number</p>                
+        <button style="margin-left: 70px;" (click)="sortByPrice(allHotels)">Price</button>
+
+    </div>
+
+    <div *ngFor="let item of allHotels">
+        <div class="card-container">
+            <p style="width: 200px;"> {{ item.hotelName }}</p> <!-- Hotel name  -->
+            <p>{{item.place }}</p> 
+            <p>{{item.ratings }}</p> <!-- Hotel rating  -->
+            <p style="width: 150px;">{{item.address }}</p>
+            <p>{{item.phoneNumber}}</p> 
+            <p style="margin-left: 30px;">{{item.cost }}</p>
+            <button type="button" [disabled]="btnstate" (click)="addToCart(item)" class="button">
+                Book Hotel
+            </button>
+            
+        </div>     
+    
+    </div>
+</div>
